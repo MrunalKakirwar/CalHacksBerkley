@@ -1,0 +1,106 @@
+.homepage {
+    text-align: center;
+  }
+  
+  .hero {
+    background-image: url("../../assets/homebg.gif"); /* Adjusted path */
+    background-size: cover;
+    background-position: center;
+    flex: 0.5; /* Allow it to grow and take up available space */
+    display: float;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 500px; /* Add some padding for breathing space */
+    min-height: 95vh;
+}
+
+/* Optional: adjust Navbar and Footer styles if necessary */
+
+  
+  @keyframes backgroundAnimation {
+    0% { background-position: top; }
+    100% { background-position: bottom; }
+  }
+  
+  .hero h1 {
+    font-size: 8rem; /* Increase font size for the heading */
+    animation: fadeIn 1.5s ease-in-out; /* Add fade-in animation */
+    color: #000;
+  }
+  
+  .hero p {
+    font-size: 4rem; /* Increase font size for the paragraph */
+    animation: slideIn 1.5s ease-in-out; /* Add slide-in animation */
+    color: #000;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 15px 30px; /* Increase padding for more size */
+    font-size: 40px; /* Increase font size */
+    border: none; /* Remove border for a cleaner look */
+    border-radius: 5px; /* Add some rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Add smooth transitions */
+  }
+  
+  .lender-btn {
+    background-color: #4caf50;
+    color: white;
+    margin-right: 15px;
+  }
+  
+  .parker-btn {
+    background-color: #2196f3;
+    color: white;
+    margin-left: 15px;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+  }
+  
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    padding: 30px; /* Padding around the text */
+    border-radius: 20px; /* Rounded corners */
+    text-align: center; /* Center align text */
+    position: absolute; /* Positioning relative to the hero section */
+    top: 100px; /* Move the box to the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); 
+    width: 60%;
+    animation: fadeInSlide 1.5s ease-in-out;
+    /* Adjust horizontal centering */
+  }
+
+.overlay h1,
+.overlay p {
+  color: white; /* Set font color to white for h1 and p */
+}
