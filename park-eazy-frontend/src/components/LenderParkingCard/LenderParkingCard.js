@@ -9,7 +9,7 @@ const LenderParkingCard = () => {
 
   useEffect(() => {
     fetchLenderParking();
-  });
+  }, []);
 
   const fetchLenderParking = async () => {
     const lenderId = localStorage.getItem("email");
