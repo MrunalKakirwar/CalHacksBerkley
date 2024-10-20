@@ -9,6 +9,7 @@ import Lender from "./pages/Lender";
 import HomePage from "./pages/Home";
 import MyBookings from "./pages/MyBookings";
 import Contact from "./components/Contact/Contact";
+import Chatbot from "./components/Chatbot/Chatbot"
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/lender" element={<Lender />} />
             <Route path="/consumer/my-bookings" element={<MyBookings />}/>
             <Route path="/contact" element={<Contact />} />
+            <Route path="/chatbot" element={<Chatbot />} />
             {/* <Route path="/add-parking" element={<AddParking />} /> */}
             {/* Other routes can be added here for Listings, Contact, etc. */}
           </Routes>

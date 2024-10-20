@@ -60,6 +60,11 @@ const Navbar = () => {
             Contact
           </a>
         </li>
+        <li style={{ margin: "0 10px" }}>
+          <a href="/chatbot" style={{ color: "white", textDecoration: "none" }}>
+            Chat
+          </a>
+        </li>
       </ul>
     </nav>
   );
