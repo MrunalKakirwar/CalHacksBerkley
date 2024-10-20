@@ -17,8 +17,9 @@ from park_eazy_flask_backend.controllers.lenders import add_parking, get_all_par
 
 lender_routes = Blueprint('lender_routes', __name__, url_prefix='/lender')
 
-@lender_routes.route("/add-parking/<lender_id>", methods=["POST"])
+@lender_routes.route("/add-parking/<lender_id>/", methods=["POST"])
 def add_parking_route(lender_id):
+    print("add came ",lender_id);
     return add_parking(lender_id)
 
 @lender_routes.route("/get-all-parking/<lender_id>", methods=["GET"])

@@ -57,7 +57,7 @@ const LenderParkingCard = () => {
             maxWidth: "900px",
           }}
         >
-          {parking.map((parking) => {
+          {parking && parking.map((parking) => {
             return <ParkingSpotCard key={parking.id} parking={parking} />;
           })}
           {/* return <ParkingSpotCard /> */}

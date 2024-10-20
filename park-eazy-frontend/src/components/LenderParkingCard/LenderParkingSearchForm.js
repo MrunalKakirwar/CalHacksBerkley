@@ -13,6 +13,7 @@ const LenderParkingSearchForm = ({ setParking }) => {
   const handleSearch = async (e) => {
     try {
       e.preventDefault();
+      const lenderId = localStorage.getItem("email");
 
       const parkingSearchDetails = {
         address,
@@ -25,11 +26,24 @@ const LenderParkingSearchForm = ({ setParking }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/lender/add",
+        `http://localhost:5000/lender/add-parking/${lenderId}/`,
         parkingSearchDetails
       );
-
+      // fetchLenderParking();
       setParking(response.data.availableParking);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchLenderParking = async () => {
+    const lenderId = localStorage.getItem("email");
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/lender/get-all-parking/${lenderId}`
+      );
+
+      setParking(response.data)
     } catch (err) {
       console.log(err);
     }

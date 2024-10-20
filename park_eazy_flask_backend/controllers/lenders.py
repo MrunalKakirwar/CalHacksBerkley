@@ -11,13 +11,33 @@ def add_parking(lender_id):
     try:
         parking_details = request.json
         lender = LenderModel.find_by_email(lender_id)
-        
+        print("add ", lender);
         if not lender:
             return jsonify({"status": "Lender not found"}), 404
 
+        # Add the new parking details to the lender's parking list
+        if 'parking' not in lender:
+            lender['parking'] = []
+        
+        # Generate a unique ID for the new parking spot
         parking_details['id'] = str(uuid.uuid4())
+        
+        # Convert date strings to datetime objects
+        if 'fromDate' in parking_details:
+            parking_details['fromDate'] = datetime.fromisoformat(parking_details['fromDate'].rstrip('Z'))
+        if 'toDate' in parking_details:
+            parking_details['toDate'] = datetime.fromisoformat(parking_details['toDate'].rstrip('Z'))
+        
         lender['parking'].append(parking_details)
+        
+        # Save the updated lender information to the database
         LenderModel.update_parking(lender_id, lender['parking'])
+
+        # Convert ObjectId to string for JSON serialization
+        lender['_id'] = str(lender['_id'])
+        for parking in lender['parking']:
+            if '_id' in parking:
+                parking['_id'] = str(parking['_id'])
 
         return jsonify({"status": "Parking created successfully", "lender": lender}), 201
     except Exception as e:
