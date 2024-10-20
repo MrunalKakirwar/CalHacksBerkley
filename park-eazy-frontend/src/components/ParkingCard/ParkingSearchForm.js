@@ -21,7 +21,7 @@ const ParkingSearchForm = ({ setParking }) => {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/consumer/search",
+        "http://localhost:5000/consumer_bp/search",
         parkingSearchDetails
       );
 

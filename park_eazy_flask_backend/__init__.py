@@ -4,6 +4,7 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 from park_eazy_flask_backend.routes.lender_routes import lender_routes
+from park_eazy_flask_backend.routes.consumer_routes import consumer_bp
 
 def create_app():
     app = Flask(__name__)
@@ -23,12 +24,10 @@ def create_app():
 
     
 
-    app.register_blueprint(lender_routes)
+    # app.register_blueprint(lender_routes)
+    # app.register_blueprint(consumer_bp)
 
-    # @app.before_request
-    # def handle_preflight():
-    #     if request.method == 'OPTIONS':
-    #         # Return empty response with 200 status code for preflight requests
-    #         return '', 200
+    app.register_blueprint(lender_routes, url_prefix='/lender')
+    app.register_blueprint(consumer_bp, url_prefix='/consumer_bp')
 
     return app

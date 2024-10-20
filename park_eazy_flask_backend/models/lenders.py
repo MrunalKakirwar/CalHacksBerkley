@@ -27,3 +27,12 @@ class LenderModel:
             {"$pull": {"parking": {"id": parking_id}}}
         )
         return lender
+    
+    @staticmethod
+    def find_all():
+        lenders = list(current_app.db.lenders.find())
+        print(f"Found {len(lenders)} lenders")  # Debug print
+        for lender in lenders:
+            print(f"Lender: {lender.get('email', 'Unknown')}")
+            print(f"Parking count: {len(lender.get('parking', []))}")
+        return lenders
