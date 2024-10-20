@@ -9,7 +9,7 @@ import Lender from "./pages/Lender";
 import HomePage from "./pages/Home";
 import MyBookings from "./pages/MyBookings";
 import Contact from "./components/Contact/Contact";
-import Chatbot from "./components/Chatbot/Chatbot"
+import Chatbot from "./components/Chatbot/Chatbot";
 
 
 function App() {
