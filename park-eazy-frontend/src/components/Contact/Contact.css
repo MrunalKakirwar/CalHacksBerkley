@@ -1,0 +1,25 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Center vertically */
+  }
+  
+  .vapi-button {
+    padding: 15px 30px;
+    background-color: #4A5568;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 20px 0; /* Spacing around button */
+    z-index: 10; /* Ensure button is above any other elements */
+  }
+
+  .contact-image {
+    width: 350px; /* Adjust this value as needed */
+    height: auto; /* Maintains the aspect ratio */
+    margin-bottom: 20px; /* Space between the image and button */
+}

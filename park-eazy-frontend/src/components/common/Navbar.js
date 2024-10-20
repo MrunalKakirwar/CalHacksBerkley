@@ -53,7 +53,10 @@ const Navbar = () => {
           </a>
         </li>
         <li style={{ margin: "0 10px" }}>
-          <a href="/contact" style={{ color: "white", textDecoration: "none" }}>
+        <a
+            href="/contact"
+            style={{ color: "white", textDecoration: "none" }}
+          >
             Contact
           </a>
         </li>

@@ -8,6 +8,7 @@ import Checkout from "./components/Checkout/Checkout";
 import Lender from "./pages/Lender";
 import HomePage from "./pages/Home";
 import MyBookings from "./pages/MyBookings";
+import Contact from "./components/Contact/Contact";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/lender" element={<Lender />} />
             <Route path="/consumer/my-bookings" element={<MyBookings />}/>
+            <Route path="/contact" element={<Contact />} />
             {/* <Route path="/add-parking" element={<AddParking />} /> */}
             {/* Other routes can be added here for Listings, Contact, etc. */}
           </Routes>
