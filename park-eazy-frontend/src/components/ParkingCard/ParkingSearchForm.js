@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { parkingData } from "../../parkingdata";
 
 const ParkingSearchForm = ({ setParking }) => {
   const [address, setAddress] = useState("");
@@ -12,20 +13,24 @@ const ParkingSearchForm = ({ setParking }) => {
     try {
       e.preventDefault();
 
-      const parkingSearchDetails = {
-        address,
-        fromDate,
-        fromTime,
-        toDate,
-        toTime,
-      };
+      setTimeout(() => {
+        setParking(parkingData)
+      }, 1000)
 
-      const response = await axios.post(
-        "http://localhost:5000/consumer_bp/search",
-        parkingSearchDetails
-      );
+      // const parkingSearchDetails = {
+      //   address,
+      //   fromDate,
+      //   fromTime,
+      //   toDate,
+      //   toTime,
+      // };
 
-      setParking(response.data.availableParking);
+      // const response = await axios.post(
+      //   "http://localhost:5000/consumer_bp/search",
+      //   parkingSearchDetails
+      // );
+
+      // setParking(response.data.availableParking);
     } catch (err) {
       console.log(err);
     }

@@ -44,7 +44,7 @@ def get_parking_availability_from_db():
         return None
 
 # Define a periodic task to communicate parking availability
-@ParkingAgent.on_interval(period=30.0)  # Every 10 seconds
+@ParkingAgent.on_interval(period=30.0)  # Every 30 seconds
 async def report_availability(ctx: Context):
     print(ParkingAgent.address)
     availability_info = get_parking_availability_from_db()
